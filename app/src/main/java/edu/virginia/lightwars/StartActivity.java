@@ -94,6 +94,13 @@ public class StartActivity extends Activity implements LocationListener {
             }
         });
 
+        final Button tweet_button = (Button) findViewById(R.id.tweet_button);
+        tweet_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         provider = locationManager.getBestProvider(criteria, false);

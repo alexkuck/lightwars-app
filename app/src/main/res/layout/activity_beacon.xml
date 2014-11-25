@@ -16,10 +16,17 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1"
+        android:id="@+id/button0"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -32,13 +39,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button3"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"/>
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button4"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"/>
 </LinearLayout>

@@ -47,36 +47,34 @@ public class LEDJSON
         return example_json[ ran_num ];
     }
 
-
     private static String single_color =
                 "{\n" +
                 "\"lights\": [\n" +
                 "\n" +
-                "{\"lightId\": 1, \"red\":%d,\"green\":%d,\"blue\":%d, \"intensity\": 0.6}],\n" +
+                "{\"lightId\": %d, \"red\":%d,\"green\":%d,\"blue\":%d, \"intensity\": 0.6}],\n" +
                 "\n" +
                 "\"propagate\": true\n" +
                 "}\n";
 
-    public static String getRedJSON()
+    public static String getRedJSON(int x)
     {
-        return String.format(single_color, 255, 0, 0);
+        return String.format(single_color, x, 255, 0, 0);
     }
 
-    public static String getGreenJSON()
+    public static String getGreenJSON(int x)
     {
-        return String.format(single_color, 0, 255, 0);
+        return String.format(single_color, x, 0, 255, 0);
     }
 
-    public static String getBlueJSON()
+    public static String getBlueJSON(int x)
     {
-        return String.format(single_color, 0, 0, 255);
+        return String.format(single_color, x, 0, 0, 255);
     }
 
-    public static String getWhiteJSON()
+    public static String getWhiteJSON(int x)
     {
-        return String.format(single_color, 255, 255, 255);
+        return String.format(single_color, x, 255, 255, 255);
     }
-
 
 
 

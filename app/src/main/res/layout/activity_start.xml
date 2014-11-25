@@ -18,13 +18,27 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="75dp"
-        android:text="@string/conn_button"
-        android:id="@+id/conn_button"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:text="@string/conn_button"
+            android:id="@+id/conn_button"/>
+
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:text="@string/tweet_button"
+            android:id="@+id/tweet_button"/>
+        </LinearLayout>
+
 
 
     <TextView
