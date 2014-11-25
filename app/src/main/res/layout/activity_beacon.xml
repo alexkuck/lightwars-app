@@ -5,12 +5,18 @@
     android:orientation="vertical"
     tools:context="edu.virginia.lightwars.BeaconActivity">
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/question"
+        android:text="5 + 5 = ?"
+        android:gravity="center_horizontal"
+        android:textSize="60dp"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Red"
-        android:id="@+id/red_button"
+        android:id="@+id/button1"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         />
@@ -18,24 +24,21 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Green"
-        android:id="@+id/green_button"
+        android:id="@+id/button2"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Blue"
-        android:id="@+id/blue_button"
+        android:id="@+id/button3"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="White"
-        android:id="@+id/white_button"
+        android:id="@+id/button4"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"/>
 </LinearLayout>
