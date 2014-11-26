@@ -88,7 +88,7 @@ public class PostService extends IntentService {
         try
         {
             httpclient.execute(httpost);
-            toast("Executed HTTP POST request.");
+//            toast("Executed HTTP POST request.");
         }
         catch (IOException e)
         {

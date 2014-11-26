@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Light Wars</string>
-    <string name="light_wars">Light Wars</string>
+    <string name="app_name">LightWars</string>
+    <string name="light_wars">LightWars</string>
     <string name="conn_button">Begin Journey</string>
-    <string name="tweet_button">Tweet Your Ranking</string>
+    <string name="tweet_button">Tweet Battle Record!</string>
+    <string name="login_button">Login to Twitter</string>
+    <string name="logout_button">Logout of Twitter</string>
+
     <string name="loc_button">Acquire Galactic Location</string>
     <string name="ip_address">IP Address</string>
     <string name="connect">Connect</string>
@@ -15,5 +18,8 @@
     <string name="title_activity_start">StartActivity</string>
     <string name="title_activity_beacon">Beacon</string>
     <string name="hello_world">Hello world!</string>
+
+    <string name="total_frame">Victorious in %d battles!</string>
+    <string name="tweet_frame">I have won %d battles on LightWars! I am an intergalactic space hero!</string>
 
 </resources>

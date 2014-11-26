@@ -4,42 +4,45 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.util.Log;
+import android.preference.PreferenceManager;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Random;
 
-import twitter4j.Twitter;
-
 
 public class BeaconActivity extends Activity {
+
+    Preferences pref;
 
     public final static String EXTRA_IP = "edu.virginia.lightwars.IP";
 
     private String ip;
     private int index;
+    private Integer led_count;
     private Integer total;
 
     @Override
     public void onPause()
     {
+        pref.setTotalCorrect(total);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         super.onPause();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        pref = new Preferences(PreferenceManager.getDefaultSharedPreferences(this));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beacon);
         newMathProblem();
         ip = getIntent().getStringExtra(EXTRA_IP);
+        total = pref.getTotalCorrect();
 
         final Button button0 = (Button) findViewById(R.id.button0);
         final Button button1 = (Button) findViewById(R.id.button1);
@@ -55,7 +58,8 @@ public class BeaconActivity extends Activity {
             @Override
             public void onClick(View V) {
                 if(index == 0) {
-                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON( getAndAdd() ));
+                    total++;
+                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON(getAndAdd()));
                     newMathProblem();
 
                     button0.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
@@ -73,7 +77,8 @@ public class BeaconActivity extends Activity {
             @Override
             public void onClick(View V) {
                 if(index == 1) {
-                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON( getAndAdd() ));
+                    total++;
+                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON(getAndAdd()));
                     newMathProblem();
 
                     button0.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
@@ -90,7 +95,8 @@ public class BeaconActivity extends Activity {
             @Override
             public void onClick(View V) {
                 if(index == 2) {
-                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON( getAndAdd() ));
+                    total++;
+                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON(getAndAdd()));
                     newMathProblem();
 
                     button0.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
@@ -107,7 +113,8 @@ public class BeaconActivity extends Activity {
             @Override
             public void onClick(View V) {
                 if(index == 3) {
-                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON( getAndAdd() ));
+                    total++;
+                    PostService.startRPiPOST(getBaseContext(), ip, LEDJSON.getWhiteJSON(getAndAdd()));
                     newMathProblem();
 
                     button0.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
@@ -164,10 +171,10 @@ public class BeaconActivity extends Activity {
     }
 
     private int getAndAdd() {
-        if (total == null || total == 0) {
-            total = 32;
+        if (led_count == null || led_count == 0) {
+            led_count = 32;
         }
-        return total--;
+        return led_count--;
     }
 
 }
