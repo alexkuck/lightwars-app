@@ -7,6 +7,7 @@
     <string name="tweet_button">Tweet Battle Record!</string>
     <string name="login_button">Login to Twitter</string>
     <string name="logout_button">Logout of Twitter</string>
+    <string name="toast_victory">Congratulations Space Ranger! You were victorious in the battle.</string>
 
     <string name="loc_button">Acquire Galactic Location</string>
     <string name="ip_address">IP Address</string>

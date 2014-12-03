@@ -8,6 +8,20 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="edu.virginia.lightwars.StartActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/green_saber_view"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/red_saber_view"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
     <TextView
         android:text="@string/light_wars"
         android:layout_width="wrap_content"
@@ -59,8 +73,6 @@
             android:id="@+id/logout_button"/>
         </LinearLayout>
 
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,7 +108,5 @@
         android:text="Altitude Error"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
-
-
 
 </RelativeLayout>

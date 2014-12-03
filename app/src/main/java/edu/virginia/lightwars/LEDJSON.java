@@ -78,5 +78,39 @@ public class LEDJSON
 
 
 
+    private static String battle_color_seperate =
+                "{\n" +
+                "\"lights\": [\n" +
+                "\n" +
+                "{\"lightId\": %d, \"red\":255,\"green\":0,\"blue\":0, \"intensity\": 0.6},\n" +
+                "\n" +
+                "{\"lightId\": %d, \"red\":0,\"green\":0,\"blue\":40, \"intensity\": 0.4},\n" +
+                "\n" +
+                "{\"lightId\": %d, \"red\":0,\"green\":255,\"blue\":0, \"intensity\": 0.6}],\n" +
+                "\n" +
+                "\"propagate\": true\n" +
+                "}\n";
+
+    private static String battle_color_join =
+            "{\n" +
+                    "\"lights\": [\n" +
+                    "\n" +
+                    "{\"lightId\": %d, \"red\":255,\"green\":0,\"blue\":0, \"intensity\": 0.6},\n" +
+                    "\n" +
+                    "{\"lightId\": %d, \"red\":0,\"green\":255,\"blue\":0, \"intensity\": 0.6}],\n" +
+                    "\n" +
+                    "\"propagate\": true\n" +
+                    "}\n";
+
+        public static String getBattleJSON(int blue_index, int green_index)
+    {
+        if(green_index - blue_index == 0) {
+            return String.format(battle_color_join, 0, green_index);
+        }
+        else {
+            return String.format(battle_color_seperate, 0, blue_index, green_index);
+        }
+
+    }
 
 }

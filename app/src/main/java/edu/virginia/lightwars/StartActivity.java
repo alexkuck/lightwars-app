@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,12 +64,20 @@ public class StartActivity extends Activity implements LocationListener {
         LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
         boolean enabled = service.isProviderEnabled(LocationManager.GPS_PROVIDER);
         if (!enabled) {
+            Toast.makeText(this, "Please Enable Location Settings", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             startActivity(intent);
+
+            // todo ask user via dialog to turn on location settings
         }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
+        ImageView greenView = (ImageView) findViewById(R.id.green_saber_view);
+        greenView.setImageResource(R.drawable.greensaber);
+        ImageView redView = (ImageView) findViewById(R.id.red_saber_view);
+        redView.setImageResource(R.drawable.redsaber);
 
         lat_text = (TextView) findViewById(R.id.lat_text);
         lng_text = (TextView) findViewById(R.id.lng_text);
@@ -285,7 +294,7 @@ public class StartActivity extends Activity implements LocationListener {
                 @Override
                 public void run() {
                     if(success) {
-                        String msg = "Please authorize LightWars";
+                        String msg = "Please Authorize LightWars";
                         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
                     }
                 }
@@ -407,12 +416,12 @@ public class StartActivity extends Activity implements LocationListener {
     @Override
     public void onProviderEnabled(String provider)
     {
-        Toast.makeText(this, "New Provider Enabled: " + provider, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "New Provider Enabled: " + provider, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onProviderDisabled(String provider)
     {
-        Toast.makeText(this, "Provider Disabled: " + provider, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Provider Disabled: " + provider, Toast.LENGTH_SHORT).show();
     }
 }
